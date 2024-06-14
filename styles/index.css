@@ -1,19 +1,20 @@
+
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
     display: flex;
+    flex-direction: column;
 }
 
 .appbar {
     width: 100%;
-    background-color: #333;
-    color: white;
+    background-color: white;
     height: 50px;
     position: fixed;
     display: flex;
     align-items: center;
-    /* justify-content: space-between; */
     z-index: 1000;
     top: 0;
     left: 0;
@@ -23,25 +24,31 @@ body {
 .menu-icon {
     font-size: 30px;
     cursor: pointer;
-    /* padding: 15px; */
-    /* background-color: #333; */
-    color: white;
+    color: #333; /* Dark color for the menu icon */
     z-index: 1000;
+    transition: transform 0.3s ease;
+}
+
+.menu-icon.change {
+    transform: rotate(45deg);
 }
 
 .website-logo img {
     height: 40px; /* Adjust as needed */
-    margin-left: 10px;
+    margin-left: 20px; /* Added spacing */
 }
 
 .appbar-content {
-    padding: 2%;
-    /* text-align: center; */
+    padding: 0 10px;
+    flex-grow: 1;
 }
+
 .appbar-content h1 {
     margin: 0;
     font-size: 24px;
+    color: #333; /* Dark color for the appbar content text */
 }
+
 .sidebar {
     height: 100%;
     width: 0;
@@ -49,7 +56,7 @@ body {
     z-index: 1001;
     top: 0;
     left: 0;
-    background-color: #333;
+    background-color: white;
     overflow-x: hidden;
     transition: 0.5s;
     padding-top: 60px;
@@ -66,7 +73,7 @@ body {
 }
 
 .sidebar ul li a {
-    color: white;
+    color: #333;
     text-decoration: none;
     display: block;
 }
@@ -78,14 +85,14 @@ body {
 .sidebar .closebtn {
     position: absolute;
     top: 15px;
-    right: 25px;
+    left: 25px; /* Move close button to the left */
     font-size: 36px;
     cursor: pointer;
+    color: #333;
 }
 
 .content {
     margin-top: 50px;
-    margin-left: 250px;
     padding: 20px;
     transition: margin-left 0.5s;
     flex-grow: 1;
@@ -102,3 +109,4 @@ body {
     z-index: 1000;
     display: none;
 }
+
